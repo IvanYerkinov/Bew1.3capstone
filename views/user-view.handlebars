@@ -1,0 +1,12 @@
+<div class="container">
+
+    <p>User View</p>
+
+    <h3>User: {{user.username}}</h3>
+
+    {{#each user.images}}
+    <a href="/images/{{this._id}}"> Image: {{this.title}} </a>
+    <br>
+    {{/each}}
+
+</div>

@@ -1,0 +1,35 @@
+<div class="container">
+    <p>Image view</p>
+
+
+    <p>{{image.title}}</p>
+    <sub>Uploaded by: <a href="/user/{{image.author._id}}">{{image.author.username}} </a></sub>
+    <br>
+    <img src={{image.imgurl}} alt="">
+    <p>{{image.summary}}</p>
+
+    <p></p>
+
+    <br>
+
+    {{#if currentUser}}
+    <div class="row">
+      <div class="col-sm-4 col-sm-offset-4">
+        <form action="/images/comment/{{image._id}}" method="post" id='comment'>
+          <legend>Comment</legend>
+          <textarea rows="4" cols="50" name="content" form="comment"></textarea>
+          <div class='text-right'>
+            <button type="submit" class="btn btn-primary">Comment</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    {{/if}}
+
+    {{#each image.comments}}
+    <p><a href="/user/{{this.author._id}}"> {{this.author.username}}</a> says: {{this.content}} </p>
+    {{/each}}
+
+
+
+</div>

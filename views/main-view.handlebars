@@ -1,0 +1,7 @@
+<p>Main View</p>
+
+{{#each images}}
+<a href="/images/{{this._id}}"><p>Image: {{this.title}}</p></a>
+{{/each}}
+
+<p>{{currentUser.username}}</p>
