@@ -1,7 +1,16 @@
-<p>Main View</p>
+<h3>Main View</h3>
+<br>
 
+<div class="row">
 {{#each images}}
-<a href="/images/{{this._id}}"><p>Image: {{this.title}}</p></a>
+ <div class="col-sm-4">
+<div class="card" style="width: 18rem; height: 24rem;">
+<img class="card-img-top" src="{{this.imgurl}}" alt="">
+<h5> <a href="/images/{{this._id}}"><p>Image: {{this.title}}</p></a> </h5>
+<h6> Uploaded by: <a href="/user/{{this.author._id}}"> {{this.author.username}}</a> </h6>
+</div>
+<br>
+</div>
 {{/each}}
 
-<p>{{currentUser.username}}</p>
+</div>

@@ -1,12 +1,20 @@
 <div class="container">
 
-    <p>User View</p>
+    <h3>User View</h3>
 
-    <h3>User: {{user.username}}</h3>
-
-    {{#each user.images}}
-    <a href="/images/{{this._id}}"> Image: {{this.title}} </a>
     <br>
+
+    <h4>User: {{user.username}}</h4>
+<div class="row">
+    <div class="col-sm-4">
+    {{#each user.images}}
+    <div class="card" style="width: 18rem; height: 24rem;">
+    <img class="card-img-top" src="{{this.imgurl}}" alt="">
+    <h5> <a href="/images/{{this._id}}"><p>Image: {{this.title}}</p></a> </h5>
+    </div>
+    <br>
+</div>
     {{/each}}
 
+</div>
 </div>

@@ -1,11 +1,13 @@
 <div class="container">
-    <p>Image view</p>
+    <h2>Image view</h2>
 
+    <br>
 
-    <p>{{image.title}}</p>
+    <h3>{{image.title}}</h3>
     <sub>Uploaded by: <a href="/user/{{image.author._id}}">{{image.author.username}} </a></sub>
     <br>
     <img src={{image.imgurl}} alt="">
+    <h4>Summary: </h4>
     <p>{{image.summary}}</p>
 
     <p></p>
@@ -27,7 +29,11 @@
     {{/if}}
 
     {{#each image.comments}}
-    <p><a href="/user/{{this.author._id}}"> {{this.author.username}}</a> says: {{this.content}} </p>
+    <div class="card">
+        <div class="card-body">
+        <p><a href="/user/{{this.author._id}}"> {{this.author.username}}</a> says: {{this.content}} </p>
+        </div>
+    </div>
     {{/each}}
 
 
